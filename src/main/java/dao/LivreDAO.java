@@ -1,6 +1,6 @@
 package dao;
 
-import static main.ManageEmployee.factory;
+import static utils.ConfigurationHibernate.factory;
 
 import java.util.List;
 

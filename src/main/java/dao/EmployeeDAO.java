@@ -7,7 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import entities.Employee;
-import static main.ManageEmployee.factory;
+import static utils.ConfigurationHibernate.factory;
 public class EmployeeDAO {
 
 	/* Method to CREATE an employee in the database */
