@@ -16,7 +16,7 @@ import dao.CategoryDAO;
 import dao.EmployeeDAO;
 import entities.Category;
 import entities.Employee;
-
+import entities.Livre;
 public class ManageEmployee {
 	public static SessionFactory factory;
 	private static ServiceRegistry serviceRegistry;
@@ -28,6 +28,7 @@ public class ManageEmployee {
 			Configuration configuration = new Configuration().configure();
 			configuration.addAnnotatedClass(Employee.class);
 			configuration.addAnnotatedClass(Category.class);
+			configuration.addAnnotatedClass(Livre.class);
 			// Build a service registry from the properties of the configuration
 			// This is new in Hibernate 4 !
 			serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
@@ -51,8 +52,8 @@ public class ManageEmployee {
 		CategoryDAO.addCategory(category1);
 		CategoryDAO.addCategory(category2);
 		System.out.println(CategoryDAO.getAllCategories());*/
-		System.out.println(CategoryDAO.getAllCategoriesByDescendingOrder());
-		System.out.println("Le nombre de catégorie : "+CategoryDAO.getQtyCategory());
+		//System.out.println(CategoryDAO.getAllCategoriesByDescendingOrder());
+		//System.out.println("Le nombre de catégorie : "+CategoryDAO.getQtyCategory());
 		
 		/*
 		Scanner sc = new Scanner(System.in);
