@@ -16,7 +16,7 @@ public class EmployeeDAO {
 		Transaction tx = null;
 		Integer employeeID = null;
 		try {
-			tx = session.beginTransaction();
+			 tx = session.beginTransaction();
 				Employee employee = new Employee();
 				employee.setFirstName(fname);
 				employee.setLastName(lname);

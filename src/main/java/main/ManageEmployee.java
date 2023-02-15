@@ -42,6 +42,8 @@ public class ManageEmployee {
 		
 		System.out.println("Hello Hibernate");
 		configHibernate();
+		
+		/*
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Donner votre firstname : ");
@@ -54,7 +56,7 @@ public class ManageEmployee {
 		
 		
 		Integer empID1 = EmployeeDAO.addEmployee(fsname, lsname, salaire);
-
+		 */
 		
 		/* List down all the employees */
 		EmployeeDAO.listEmployees();
@@ -62,13 +64,15 @@ public class ManageEmployee {
 		 
 		/*
 		/* Update employee's records */
-		//ME.updateEmployee(1, 5000);
+		// EmployeeDAO.updateEmployee(1, 15000);
 		
+		// EmployeeDAO.listEmployees();
+		 
 		/* Delete an employee from the database */
-		//ME.deleteEmployee(3);
+		EmployeeDAO.deleteEmployee(1);
 		
 		/* List down new list of the employees */
-		//ME.listEmployees();*/
+		EmployeeDAO.listEmployees();
 	}
 
 	
