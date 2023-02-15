@@ -12,7 +12,9 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
+import dao.CategoryDAO;
 import dao.EmployeeDAO;
+import entities.Category;
 import entities.Employee;
 
 public class ManageEmployee {
@@ -25,7 +27,7 @@ public class ManageEmployee {
 			// Initialize the hibernate configuration.
 			Configuration configuration = new Configuration().configure();
 			configuration.addAnnotatedClass(Employee.class);
-
+			configuration.addAnnotatedClass(Category.class);
 			// Build a service registry from the properties of the configuration
 			// This is new in Hibernate 4 !
 			serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
@@ -43,6 +45,12 @@ public class ManageEmployee {
 		System.out.println("Hello Hibernate");
 		configHibernate();
 		
+		Category category1 = new Category("Programmation Java",10);
+		Category category2 = new Category("Roman",12);
+		
+		CategoryDAO.addCategory(category1);
+		CategoryDAO.addCategory(category2);
+		System.out.println(CategoryDAO.getAllCategories());
 		/*
 		Scanner sc = new Scanner(System.in);
 		
@@ -59,7 +67,7 @@ public class ManageEmployee {
 		 */
 		
 		/* List down all the employees */
-		EmployeeDAO.listEmployees();
+		//EmployeeDAO.listEmployees();
 		 
 		 
 		/*
@@ -69,10 +77,10 @@ public class ManageEmployee {
 		// EmployeeDAO.listEmployees();
 		 
 		/* Delete an employee from the database */
-		EmployeeDAO.deleteEmployee(1);
+		//EmployeeDAO.deleteEmployee(1);
 		
 		/* List down new list of the employees */
-		EmployeeDAO.listEmployees();
+		//EmployeeDAO.listEmployees();
 	}
 
 	
