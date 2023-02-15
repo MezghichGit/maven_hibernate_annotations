@@ -120,7 +120,7 @@ public class CategoryDAO {
 	}
 	
 	public static int getQtyCategory() {
-		int qtyCategory = -1;
+		int qtyCategory = 0;
 		Session session = factory.openSession();
 		Transaction tx = null;
 		try {

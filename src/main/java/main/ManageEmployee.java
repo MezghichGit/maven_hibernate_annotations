@@ -44,13 +44,16 @@ public class ManageEmployee {
 		
 		System.out.println("Hello Hibernate");
 		configHibernate();
-		
-		Category category1 = new Category("Programmation Java",10);
-		Category category2 = new Category("Roman",12);
+		/*
+		Category category1 = new Category("Programmation Python",8);
+		Category category2 = new Category("Programmation Angular",6);
 		
 		CategoryDAO.addCategory(category1);
 		CategoryDAO.addCategory(category2);
-		System.out.println(CategoryDAO.getAllCategories());
+		System.out.println(CategoryDAO.getAllCategories());*/
+		System.out.println(CategoryDAO.getAllCategoriesByDescendingOrder());
+		System.out.println("Le nombre de catégorie : "+CategoryDAO.getQtyCategory());
+		
 		/*
 		Scanner sc = new Scanner(System.in);
 		
