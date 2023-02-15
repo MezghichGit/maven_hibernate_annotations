@@ -144,4 +144,25 @@ public class CategoryDAO {
 		session.close();// fermeture de la session hibernate
 		return qtyCategory;
 	}
+	
+	
+	///
+	
+	public static Category getCategoryById(Integer categoryID) {
+		Category category=null;
+		Session session = factory.openSession();
+		Transaction tx = null;
+		try {
+			tx = session.beginTransaction();
+			 category = (Category) session.get(Category.class, categoryID);
+			tx.commit();
+		} catch (HibernateException e) {
+			if (tx != null)
+				tx.rollback();
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return category;
+	}
 }

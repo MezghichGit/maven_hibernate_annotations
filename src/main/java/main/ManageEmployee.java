@@ -1,5 +1,7 @@
 package main;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
@@ -14,6 +16,7 @@ import org.hibernate.service.ServiceRegistry;
 
 import dao.CategoryDAO;
 import dao.EmployeeDAO;
+import dao.LivreDAO;
 import entities.Category;
 import entities.Employee;
 import entities.Livre;
@@ -45,6 +48,19 @@ public class ManageEmployee {
 		
 		System.out.println("Hello Hibernate");
 		configHibernate();
+		
+		///////////// Manipulation des Livres /////////
+		
+		Category category = CategoryDAO.getCategoryById(7);	
+		//LocalDate date = LocalDate.of(2014, 10, 10);
+		Date dateEdition =  new Date();
+		Livre livre = new Livre("OCP Official guide",200,dateEdition,category);
+		LivreDAO.addLivre(livre);
+		System.out.println(LivreDAO.getAllLivres());
+		
+		
+		//////////// Fin //////////////////////
+		
 		/*
 		Category category1 = new Category("Programmation Python",8);
 		Category category2 = new Category("Programmation Angular",6);
